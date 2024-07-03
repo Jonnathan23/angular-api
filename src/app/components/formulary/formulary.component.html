@@ -8,12 +8,48 @@
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">Cedula</label>
             <input type="text" id="cedula" name="cedula" class="w-full px-3 py-2 border rounded-md"
-                placeholder="Ingrese la cedula" #cedula="ngModel" ngModel/>
+                placeholder="Ingrese la cedula" #cedula="ngModel" [(ngModel)]="id" />
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">Nombre</label>
+            <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-md"
+                placeholder="Ingrese el nombre" #name="ngModel" [(ngModel)]="name" />
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">Direccion</label>
+            <input type="text" id="direction" name="direction" class="w-full px-3 py-2 border rounded-md"
+                placeholder="Ingrese la direction" #direction="ngModel" [(ngModel)]="direction" />
         </div>
 
         <!-- Botón de Envío -->
         <div>
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Guardar</button>
+            <button (click)="updateClient(formulary)"
+                class="bg-blue-500 text-white px-4 py-2 rounded-md ml-6 ml-5">Actualizar</button>
         </div>
+
+
     </form>
+</div>
+
+<div class="ml-10">
+    <h2 class="font-black">Lista de Clientes</h2>
+    <ul>
+        @for (clienteData of clients; track clienteData) {
+        <li class="list-outside ">
+            <div class="px-5 py-2">
+                <p>{{ clienteData.cedula}}</p>
+                <p>{{ clienteData.nombre}}</p>
+                <p>{{ clienteData.direccion}}</p>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-md"
+                    (click)="deleteClient(clienteData.cedula)">Borrar</button>
+
+                <button class="bg-blue-500 text-white px-4 py-2 rounded-md ml-5"
+                    (click)="getValues(clienteData.cedula, clienteData.direccion, clienteData.nombre)">Modificar</button>
+            </div>
+        </li>
+        }
+    </ul>
 </div>
