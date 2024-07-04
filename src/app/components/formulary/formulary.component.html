@@ -14,20 +14,20 @@
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">Nombre</label>
             <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-md"
-                placeholder="Ingrese el nombre" #name="ngModel" [(ngModel)]="name" />
+                placeholder="Ingrese el nombre" #name="ngModel" [(ngModel)]="nombre" />
         </div>
 
         <div class="mb-4">
             <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">Direccion</label>
             <input type="text" id="direction" name="direction" class="w-full px-3 py-2 border rounded-md"
-                placeholder="Ingrese la direction" #direction="ngModel" [(ngModel)]="direction" />
+                placeholder="Ingrese la direction" #direction="ngModel" [(ngModel)]="direccion" />
         </div>
 
         <!-- Botón de Envío -->
         <div>
             <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Guardar</button>
             <button (click)="updateClient(formulary)"
-                class="bg-blue-500 text-white px-4 py-2 rounded-md ml-6 ml-5">Actualizar</button>
+                class="bg-blue-500 text-white px-4 py-2 rounded-md ml-6 ">Actualizar</button>
         </div>
 
 

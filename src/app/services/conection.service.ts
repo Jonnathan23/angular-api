@@ -18,11 +18,11 @@ export class ConectionService {
     return this.http.post('http://localhost:8080/demojakarta/rs/clientes', data);
   }
 
-  createClient(data: any) {
+  createClient(data: Cliente) {
     return this.http.post('http://localhost:8080/demojakarta/rs/clientes', data);
   }
 
-  deleteClient(id: any) {
+  deleteClient(id: string) {
     return this.http.delete(`http://localhost:8080/demojakarta/rs/clientes?id=${id}`);
   }
 
